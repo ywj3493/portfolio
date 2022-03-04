@@ -1,6 +1,6 @@
 /* Global */
 :root {
-  /* color */
+  /* Color */
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
@@ -13,23 +13,23 @@
   --color-light-grey: #7c7979;
   --color-orange: #feb546;
 
-  /* font size */
+  /* Font size */
   --font-large: 48px;
   --font-medium: 28px;
   --font-regular: 18px;
   --font-small: 16px;
   --font-micro: 14px;
 
-  /* font weight */
+  /* Font weight */
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
 
-  /* size */
+  /* Size */
   --size-border-radius: 4px;
 }
 
-/* universal tags */
+/* Universal tags */
 * {
   box-sizing: border-box;
 }
@@ -49,7 +49,16 @@ ul {
   list-style: none;
 }
 
-/* typography */
+button {
+  /* 기본 속성 없애기 */
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  /* 클릭 시에 뜨는 border 같은 것이 outline */
+  outline: none;
+}
+
+/* Typography */
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
@@ -71,7 +80,7 @@ h3 {
   margin: 4px 0;
 }
 
-/* nav bar */
+/* Nav bar */
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -103,4 +112,29 @@ h3 {
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-blue);
+}
+
+/* Home */
+#home {
+  background: url("assets/images/background/background01.png") center/cover
+    no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+
+.home__image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-dark-blue);
+}
+
+.home__contact {
+  color: var(--color-blue);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-dark-blue);
+  border-radius: 4px;
 }
