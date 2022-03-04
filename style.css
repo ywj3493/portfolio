@@ -138,3 +138,32 @@ h3 {
   border: 2px solid var(--color-dark-blue);
   border-radius: 4px;
 }
+
+/* Section Common */
+.section {
+  padding: 50px;
+  text-align: center;
+  /* 1200 ~ 1500px 이 데스크탑에서 잘 볼 수 있는 최대 크기 */
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-self: space-between;
+  margin: 80px 0;
+}
+
+.major__icon {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  font-size: 70px;
+  background-color: #2286c3;
+  margin: auto;
+  border: 1px solid var(--color-blue);
+  /* 동그랗게 만드는 것 */
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
