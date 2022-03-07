@@ -117,6 +117,17 @@ h3 {
   background-color: var(--color-dark-blue);
 }
 
+/* 미디어쿼리 768px 이하일 때만 나타나는 토글버튼 */
+.navbar__toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  /* opacity로 사용하면 안 보여도 클릭되기 때문에 display none */
+  display: none;
+}
+
 /* Home */
 #home {
   background: url("assets/images/background/background01.png") center/cover
@@ -438,4 +449,38 @@ h3 {
 
 .contact__links i:hover {
   transform: scale(1.1);
+}
+
+/* media query */
+/* 미디어 쿼리 css 안에는 차이점만 들어가는 것이 좋다. */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .about__majors {
+    flex-direction: column;
+  }
+  .major {
+    margin: 38px;
+  }
+  .skillset {
+    flex-direction: column;
+  }
+  .project {
+    flex-grow: 1;
+  }
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
