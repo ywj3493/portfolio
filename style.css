@@ -151,7 +151,7 @@ h3 {
 /* About */
 .about__majors {
   display: flex;
-  justify-self: space-between;
+  justify-content: space-between;
   margin: 80px 0;
 }
 
@@ -162,8 +162,50 @@ h3 {
   font-size: 70px;
   background-color: #2286c3;
   margin: auto;
+  color: var(--color-white);
   border: 1px solid var(--color-blue);
   /* 동그랗게 만드는 것 */
   border-radius: 50%;
   margin-bottom: 16px;
+}
+
+.major__icon i {
+  /* 일반적으로 300ms 를 많이 사용한다 */
+  transition: all 300ms ease;
+}
+
+.major__icon:hover i {
+  transform: scale(1.1);
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.major__description {
+  font-size: var(--font-small);
+}
+
+.job {
+  display: flex;
+  align-items: center;
+}
+
+.job__description {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.job__name,
+.job__period {
+  color: var(--color-light-grey);
+}
+
+.job__name {
+  font-size: var(fon --font-small);
+}
+
+.job__period {
+  font-size: var(--font-micro);
 }
