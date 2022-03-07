@@ -143,6 +143,9 @@ h3 {
 .section {
   padding: 50px;
   text-align: center;
+}
+
+.section__container {
   /* 1200 ~ 1500px 이 데스크탑에서 잘 볼 수 있는 최대 크기 */
   max-width: 1200px;
   margin: auto;
@@ -208,4 +211,58 @@ h3 {
 
 .job__period {
   font-size: var(--font-micro);
+}
+
+/* Skill */
+
+#skills {
+  background-color: var(--color-light-blue);
+}
+
+.skillset {
+  display: flex;
+  background-color: var(--color-light-grey);
+  color: var(--color-light-white);
+  margin: 20px 0;
+}
+
+.skillset__title {
+  color: var(--color-white);
+  margin: 0;
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding: 20px 40px;
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  background-color: var(--color-grey);
+}
+
+.skill {
+  margin-bottom: 16px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-light-grey);
+  border-radius: 2px;
+}
+
+.skill__value {
+  height: 100%;
+  background-color: var(--color-orange);
+  border-radius: 2px;
 }
