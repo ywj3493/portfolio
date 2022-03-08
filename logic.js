@@ -18,7 +18,17 @@ document.addEventListener("scroll", () => {
 //Handle scrolling when clicking on the navbar button
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
-  console.dir(event.target.dataset.link);
+  const target = event.target;
+  const link = target.dataset.link;
+  if (link == null) return;
+  const selectedElement = document.querySelector(link);
+  selectedElement.scrollIntoView({ behavior: "smooth" });
+});
+
+//Handle scrolling when clicking on the contact me button
+const contactMeBtn = document.querySelector(".home__contact");
+contactMeBtn.addEventListener("click", (event) => {
+  console.dir("click");
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) return;
