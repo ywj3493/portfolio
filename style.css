@@ -8,9 +8,9 @@
   --color-light-blue: #9be7ff;
   --color-dark-blue: #2286c3;
   --color-black: #000000;
-  --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
+  --color-dark-grey: #4d4d4d;
   --color-orange: #feb546;
 
   /* Font size */
@@ -44,7 +44,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 ul {
@@ -88,9 +88,23 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-blue);
-  color: var(--color-white);
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  color: var(--color-black);
   padding: 16px;
+  transition: all var(--animation-duration) ease-in-out;
+  z-index: 10;
+}
+
+#navbar.navbar--blue {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  padding: 8px;
+}
+
+#navbar.navbar--blue a {
+  color: var(--color-white);
 }
 
 .navbar__menu {
@@ -107,14 +121,16 @@ h3 {
   margin: 0 4px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
-}
-
-.navbar__menu__item.active {
   border: 1px solid var(--color-white);
 }
 
+.navbar__menu__item.active {
+  border: 1px solid var(--color-dark-blue);
+}
+
 .navbar__menu__item:hover {
-  background-color: var(--color-dark-blue);
+  border-color: var(--color-dark-blue);
+  border: 1px solid var(--color-dark-blue);
 }
 
 /* 미디어쿼리 768px 이하일 때만 나타나는 토글버튼 */
@@ -133,6 +149,7 @@ h3 {
   background: url("assets/images/background/background01.png") center/cover
     no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
