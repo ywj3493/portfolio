@@ -8,7 +8,6 @@ document.addEventListener("scroll", () => {
     navActive = false;
   } else {
     if (!navActive) {
-      console.dir("scroll");
       document.querySelector("#navbar").classList.add("navbar--blue");
       navActive = true;
     }
@@ -34,4 +33,13 @@ contactMeBtn.addEventListener("click", (event) => {
   if (link == null) return;
   const selectedElement = document.querySelector(link);
   selectedElement.scrollIntoView({ behavior: "smooth" });
+});
+
+//Make home contents transparent when scrolling
+const homeElement = document.querySelector("#home");
+const homeHeight = homeElement.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  if (window.scrollY < homeElement.getBoundingClientRect().height) {
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+  }
 });
