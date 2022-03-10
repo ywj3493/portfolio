@@ -67,6 +67,12 @@ workBtnContainer.addEventListener("click", (e) => {
   if (filter == null) {
     return;
   }
+  //Remove selection from the previos item and select the new one
+  const active = document.querySelector(".category__btn.selected");
+  active.classList.remove("selected");
+  const target =
+    e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
+  target.classList.add("selected");
   projectContainer.classList.add("anim-out");
   setTimeout(() => {
     //js 모든 코드는 브라우저에서 동기적으로 처리 되기 때문에 filtering 로직 또한 늦게 이루어 져야한다.
