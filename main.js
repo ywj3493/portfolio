@@ -56,3 +56,27 @@ document.addEventListener("scroll", () => {
 arrowUp.addEventListener("click", () => {
   scrollIntoView("#home");
 });
+
+//Projects
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener("click", (e) => {
+  // 그럼 둘다 있을땐 true 뜨나?
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  projectContainer.classList.add("anim-out");
+  setTimeout(() => {
+    //js 모든 코드는 브라우저에서 동기적으로 처리 되기 때문에 filtering 로직 또한 늦게 이루어 져야한다.
+    projects.forEach((project) => {
+      if (filter === "All" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+});

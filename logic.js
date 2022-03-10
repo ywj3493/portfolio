@@ -47,7 +47,7 @@ document.addEventListener("scroll", () => {
 });
 
 //Handle scroll to top when click arrow button
-const arrowBtn = document.querySelector(".arrow-up");
+const arrowBtn = document.querySelector(".arrow-btn");
 let arrowBtnActive = false;
 document.addEventListener("scroll", () => {
   if (window.scrollY < homeHeight) {
@@ -62,4 +62,25 @@ document.addEventListener("scroll", () => {
 
 arrowBtn.addEventListener("click", () => {
   scrollIntoViewSmooth("#home");
+});
+
+//Handle works when click propject category button
+const workCategoryBtns = document.querySelectorAll(".category__btn");
+workCategoryBtns.forEach((workCategoryBtn) => {
+  const workProjects = document.querySelectorAll(".project");
+  workCategoryBtn.addEventListener("click", (event) => {
+    if (event.target.dataset.filter == "All") {
+      workProjects.forEach((project) => {
+        project.classList.remove("inactive");
+      });
+    } else {
+      workProjects.forEach((project) => {
+        if (event.target.dataset.filter != project.dataset.filter) {
+          project.classList.add("inactive");
+        } else {
+          project.classList.remove("inactive");
+        }
+      });
+    }
+  });
 });

@@ -343,9 +343,17 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anim-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
+  /* 하위 클래스에서 position absolute를 사용하기 때문에 붙잡아 두기위해 relative 후 위치는 바꾸지 않음 */
   position: relative;
   display: flex;
   justify-content: center;
@@ -353,6 +361,13 @@ h3 {
   width: 280px;
   height: 250px;
   margin: 2px;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
