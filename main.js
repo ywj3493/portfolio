@@ -13,6 +13,7 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
   if (window.scrollY == 0) {
     navbar.classList.remove("navbar--blue");
+    navbarMenu.classList.remove("open");
   } else {
     navbar.classList.add("navbar--blue");
   }
@@ -21,11 +22,20 @@ document.addEventListener("scroll", () => {
 // Handle scrolling when clicking on the navbar button
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
-  console.dir(event.target.dataset.link);
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) return;
   scrollIntoView(link);
+  navbarMenu.classList.remove("open");
+  navbar.classList.remove("navbar--blue");
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", () => {
+  console.dir("test");
+  navbarMenu.classList.toggle("open");
+  navbar.classList.toggle("navbar--blue");
 });
 
 // Handle click on "contact me" button on home
@@ -43,7 +53,7 @@ document.addEventListener("scroll", () => {
 });
 
 //Show "arrow up" button when scrolling down
-const arrowUp = document.querySelector(".arrow-up");
+const arrowUp = document.querySelector(".arrow-btn");
 document.addEventListener("scroll", () => {
   if (window.scrollY > homeHeight / 2) {
     arrowUp.classList.add("visible");

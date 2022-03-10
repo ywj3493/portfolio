@@ -84,3 +84,14 @@ workCategoryBtns.forEach((workCategoryBtn) => {
     }
   });
 });
+
+//Mobile version navbar menu on/off button click event
+const navbarMenuBtn = document.querySelector(".navbar__toggle-btn");
+navbarMenuBtn.addEventListener("click", () => {
+  const navbarMenu = document.querySelector(".navbar__menu");
+  if (navbarMenu.classList.contains("visible")) {
+    navbarMenu.classList.remove("visible");
+  } else {
+    navbarMenu.classList.add("visible");
+  }
+});
