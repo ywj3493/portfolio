@@ -117,7 +117,6 @@ const navItems = sectionIds.map((id) =>
 );
 
 // 2번 구현
-
 let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
