@@ -94,7 +94,7 @@ workBtnContainer.addEventListener("click", (e) => {
 //scrollIntoView Smooth
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
+  scrollTo.scrollIntoView({ behavior: "smooth", block: "center" });
   selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
 
@@ -121,9 +121,9 @@ const navItems = sectionIds.map((id) =>
 let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
-  selected.classList.remove("active");
-  selected = selected;
-  selected.classList.add("active");
+  selectedNavItem.classList.remove("active");
+  selectedNavItem = selected;
+  selectedNavItem.classList.add("active");
 }
 
 const observerOptions = {
@@ -136,7 +136,6 @@ const observerCallback = (entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
       const index = sectionIds.indexOf(`#${entry.target.id}`);
-      //스크롤링이 아래로 되는 중
       if (entry.boundingClientRect.y < 0) {
         selectedNavIndex = index + 1;
       } else {
